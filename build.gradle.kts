@@ -1,8 +1,17 @@
 plugins {
     java
     jacoco
+    id("org.sonarqube") version "4.4.1.3373"
     id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.4"
+}
+
+sonar {
+    properties {
+        property("sonar.projectKey", "Abbilville_tutorial-1")
+        property("sonar.organization", "abbilville")
+        property("sonar.host.url", "https://sonarcloud.io")
+    }
 }
 
 group = "id.ac.ui.cs.advprog"
@@ -10,6 +19,9 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
 }
 
 configurations {
@@ -42,7 +54,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
-tasks.register<Test>("unitTest") {
+tasks.register<Test>("UnitTest") {
     description = "Runs unit tests."
     group = "verification"
 
@@ -51,7 +63,7 @@ tasks.register<Test>("unitTest") {
     }
 }
 
-tasks.register<Test>("functionalTest") {
+tasks.register<Test>("FunctionalTest") {
     description = "Runs functional tests."
     group = "verification"
 
@@ -74,4 +86,9 @@ tasks.test {
 
 tasks.jacocoTestReport {
     dependsOn(tasks.test)
+
+    reports {
+        xml.required = true
+        html.required = true
+    }
 }
