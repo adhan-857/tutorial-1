@@ -1,5 +1,6 @@
 plugins {
     java
+    jacoco
     id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.4"
 }
@@ -41,7 +42,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
-tasks.register<Test>("UnitTest") {
+tasks.register<Test>("unitTest") {
     description = "Runs unit tests."
     group = "verification"
 
@@ -50,7 +51,7 @@ tasks.register<Test>("UnitTest") {
     }
 }
 
-tasks.register<Test>("FunctionalTest") {
+tasks.register<Test>("functionalTest") {
     description = "Runs functional tests."
     group = "verification"
 
@@ -61,4 +62,16 @@ tasks.register<Test>("FunctionalTest") {
 
 tasks.withType<Test>().configureEach {
     useJUnitPlatform()
+}
+
+tasks.test {
+    filter {
+        excludeTestsMatching("*FunctionalTest")
+    }
+
+    finalizedBy(tasks.jacocoTestReport)
+}
+
+tasks.jacocoTestReport {
+    dependsOn(tasks.test)
 }
