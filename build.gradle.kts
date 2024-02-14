@@ -1,9 +1,9 @@
 plugins {
     java
     jacoco
-    id("org.sonarqube") version "4.4.1.3373"
     id("org.springframework.boot") version "3.2.2"
     id("io.spring.dependency-management") version "1.1.4"
+    id("org.sonarqube") version "4.4.1.3373"
 }
 
 sonar {
@@ -20,9 +20,6 @@ version = "0.0.1-SNAPSHOT"
 
 java {
     sourceCompatibility = JavaVersion.VERSION_21
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
 }
 
 configurations {
@@ -55,7 +52,7 @@ dependencies {
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:$junitJupiterVersion")
 }
 
-tasks.register<Test>("UnitTest") {
+tasks.register<Test>("unitTest") {
     description = "Runs unit tests."
     group = "verification"
 
@@ -64,7 +61,7 @@ tasks.register<Test>("UnitTest") {
     }
 }
 
-tasks.register<Test>("FunctionalTest") {
+tasks.register<Test>("functionalTest") {
     description = "Runs functional tests."
     group = "verification"
 
