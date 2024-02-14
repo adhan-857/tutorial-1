@@ -43,3 +43,52 @@ Jika saya menemukan adanya kesalahan pada *source code* saya pada pengerjaan tut
     * **Buat *Subclass* Khusus**: *Inherit* `ProductTestSetup` di kedua *test suite* baru dan lama. Setiap *subclass* terdapat *setup* dan variabel khusus sesuai kebutuhannya, menjaga prinsip *Single Responsibility*.
     * **Meminimalkan Duplikasi *Logic***: Periksa *logic* pengujian yang serupa. Jika identik, pertimbangkan untuk mengekstraknya ke *method* terpisah di *base class*, meningkatkan *reusability*, dan mengurangi duplikasi.
     * **Dokumentasi**: Tambahkan *comments* yang jelas ke setiap *class* dan *method* untuk menjelaskan tujuan dan fungsinya, meningkatkan *readibility* dan pemeliharaan.
+
+<br>
+<br>
+
+# Tutorial Modul 2: CI/CD & DevOps
+### Ramadhan Andika Putra (2206081976) - AdPro A <br><br>
+
+1. Selama proses pengerjaan tutorial 2 ini, saya melakukan sejumlah perbaikan terhadap masalah kualitas kode, yang melibatkan langkah-langkah berikut:
+    <br><br>
+    * **Memperbaiki Izin Eksekusi pada Gradlew di Dockerfile:**
+
+        Saya telah menangani isu izin eksekusi pada file `gradlew` di `Dockerfile` dengan memberikan izin yang sesuai menggunakan perintah `chmod +x gradlew`. Hal ini penting agar file tersebut dapat dijalankan dengan benar dalam Docker *environment*.
+    <br>
+    <br>
+    * **Penyesuaian Versi Java untuk Analisis SonarCloud:**
+
+        Saya menyesuaikan konfigurasi analisis `SonarCloud` untuk menggunakan Java 21, mengingat versi Java sebelumnya sudah tidak lagi didukung. Dengan mengubah versi Java, maka kita telah memastikan konsistensi dan keamanan dalam proses analisis kode.
+    <br>
+    <br>
+    * **Menghilangkan Modifier `Public` pada File Terkait dengan Test:**
+
+        Untuk meningkatkan implementasi terbaik pada pengujian, saya menghilangkan modifier "public" pada file yang berkaitan dengan pengujian. Pendekatan terbaik pada pengujian adalah menggunakan modifier default, yang lebih sesuai dengan prinsip encapsulation.
+    <br>
+    <br>
+    * **Melakukan *handle duplication* yang terjadi**
+
+      Saya sempat menemukan adanya dupilkasi kode yang tidak perlu pada beberapa *unit test* dan *functional test*. Oleh karena itu, saya mencoba menggabungkan kode yang duplikat tersebut ke dalam suatu *method* yang sama.
+    <br>
+    <br>
+   * **Menambahkan Konfigurasi pada GitHub Actions Workflow:**
+
+     Saya mencoba menambahkan konfigurasi yang diperlukan dalam file GitHub Actions workflow untuk mencoba memastikan bahwa analisis `SonarCloud` berjalan dengan benar. Termasuk di dalamnya adalah spesifikasi versi Java yang digunakan, sehingga alur kerja GitHub Actions dapat dijalankan secara konsisten.
+
+   <br>
+
+    Dengan melakukan perubahan-perubahan ini, saya berharap kualitas keseluruhan dari kode tutorial 2 saya dapat meningkat, dan proses analisis `SonarCloud` dapat berjalan dengan lancar.
+<br>
+<br>
+<br>
+
+2. Dalam mengembangkan *project* ini, saya cukup berhasil dalam mengimplementasikan Continuous Integration (CI) secara efektif dengan memanfaatkan GitHub Actions. Saya telah mencoba merancang dan mengonfigurasi beberapa workflow, seperti `ci.yml`, `scorecard.yml`, dan `sonarcloud.yml`, yang secara otomatis diaktifkan setiap kali terjadi *push* atau *pull request* ke suatu *branch*. Semuanya dilakukan untuk memastikan bahwa setiap perubahan kode dapat diperiksa dan diuji secara otomatis, meningkatkan kualitas dan ketepatan kode saya.
+   <br>
+   <br>
+   Selanjutnya, saya telah mecoba dengan mengimplementasikan *Continuous Deployment (CD)* menggunakan Koyeb. Platform ini menjadi platform utama dalam otomatisasi proses *deployment* aplikasi saya, sehingga setiap kali terjadi perubahan pada *branch*, Koyeb secara otomatis melakukan *deployment*. Dengan kombinasi CI/CD ini, saya dapat memastikan bahwa perubahan kode yang telah diuji dengan baik dapat segera diterapkan ke lingkungan produksi, sehingga mempercepat siklus pengembangan dan meningkatkan efisiensi keseluruhan *project*.
+<br>
+<br>
+
+***Tambahan lampiran untuk bonus:***<br>
+<img width="960" alt="image" src="https://github.com/adhan-857/tutorial-1/assets/119088782/dd27dde3-9e76-43e6-accd-e0b64ec002ed">
