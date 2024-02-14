@@ -9,7 +9,7 @@ plugins {
 sonar {
     properties {
         property("sonar.projectKey", "adhan-857_tutorial-1")
-        property("sonar.organization", "Ramadhan Andika P")
+        property("sonar.organization", "adhan-857")
         property("sonar.host.url", "https://sonarcloud.io")
     }
 }
