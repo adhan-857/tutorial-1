@@ -9,6 +9,6 @@ class HomeControllerTest {
     void testHomePage() {
         HomeController homeController = new HomeController();
         String viewName = homeController.homePage();
-        assertEquals("HomePage", viewName);
+        assertEquals("homePage", viewName);
     }
 }
