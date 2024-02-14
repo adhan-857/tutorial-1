@@ -11,7 +11,6 @@ sonar {
         property("sonar.projectKey", "adhan-857_tutorial-1")
         property("sonar.organization", "adhan-857")
         property("sonar.host.url", "https://sonarcloud.io")
-        property("sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/test/jacocoTestReport.xml")
     }
 }
 
