@@ -9,44 +9,53 @@ import java.util.List;
 
 @Repository
 public class ProductRepository {
-    private List<Product> productData = new ArrayList<>();
+    private List <Product> productData = new ArrayList<>();
 
-    public Product create(Product product) {
+    public Product create (Product product) {
+        // Handle for invalid input
+        if ("".equals(product.getProductName())) {
+            product.setProductName("Produk Tidak Diketahui");
+        }
+        if (product.getProductQuantity() < 0) {
+            product.setProductQuantity(0);
+        }
+
         productData.add(product);
         return product;
     }
 
-    public Iterator<Product> findAll() {
+    public Iterator <Product> findAll() {
         return productData.iterator();
     }
 
-    public Product findById(String id) {
+    public Product findProductById (String productId) {
         for (Product product : productData) {
-            if (product.getProductId().equals(id)) {
+            if (product.getProductId().equals(productId)) {
                 return product;
             }
         }
         return null;
     }
 
-    public Product update(Product updateProduct) {
+    public Product update (Product product) {
+        // Handle for invalid input
+        if ("".equals(product.getProductName())) {
+            product.setProductName("Produk Tidak Diketahui");
+        }
+        if (product.getProductQuantity() < 0) {
+            product.setProductQuantity(0);
+        }
 
-        for (Product product : productData) {
-            if (product.getProductId().equals(updateProduct.getProductId())) {
-                if (updateProduct.getProductQuantity() <= 0) {
-                    updateProduct.setProductQuantity(0);
-                }
-                product.setProductName(updateProduct.getProductName());
-                product.setProductQuantity(updateProduct.getProductQuantity());
+        for (int i = 0; i < productData.size(); i++) {
+            if (productData.get(i).getProductId().equals(product.getProductId())) {
+                productData.set(i, product);
                 return product;
             }
         }
         return null;
     }
 
-    public Product delete(String productId) {
-        Product deletedProduct = findById(productId);
-        productData.remove(deletedProduct);
-        return deletedProduct;
+    public void delete (Product product) {
+        productData.remove(product);
     }
 }
