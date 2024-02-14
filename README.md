@@ -56,22 +56,22 @@ Jika saya menemukan adanya kesalahan pada *source code* saya pada pengerjaan tut
 
         Saya telah menangani isu izin eksekusi pada file `gradlew` di `Dockerfile` dengan memberikan izin yang sesuai menggunakan perintah `chmod +x gradlew`. Hal ini penting agar file tersebut dapat dijalankan dengan benar dalam Docker *environment*.
     <br>
-    <br>
+    
     * **Penyesuaian Versi Java untuk Analisis SonarCloud:**
 
         Saya menyesuaikan konfigurasi analisis `SonarCloud` untuk menggunakan Java 21, mengingat versi Java sebelumnya sudah tidak lagi didukung. Dengan mengubah versi Java, maka kita telah memastikan konsistensi dan keamanan dalam proses analisis kode.
     <br>
-    <br>
+    
     * **Menghilangkan Modifier `Public` pada File Terkait dengan Test:**
 
         Untuk meningkatkan implementasi terbaik pada pengujian, saya menghilangkan modifier "public" pada file yang berkaitan dengan pengujian. Pendekatan terbaik pada pengujian adalah menggunakan modifier default, yang lebih sesuai dengan prinsip encapsulation.
     <br>
-    <br>
+    
     * **Melakukan *handle duplication* yang terjadi**
 
       Saya sempat menemukan adanya dupilkasi kode yang tidak perlu pada beberapa *unit test* dan *functional test*. Oleh karena itu, saya mencoba menggabungkan kode yang duplikat tersebut ke dalam suatu *method* yang sama.
     <br>
-    <br>
+    
    * **Menambahkan Konfigurasi pada GitHub Actions Workflow:**
 
      Saya mencoba menambahkan konfigurasi yang diperlukan dalam file GitHub Actions workflow untuk mencoba memastikan bahwa analisis `SonarCloud` berjalan dengan benar. Termasuk di dalamnya adalah spesifikasi versi Java yang digunakan, sehingga alur kerja GitHub Actions dapat dijalankan secara konsisten.
