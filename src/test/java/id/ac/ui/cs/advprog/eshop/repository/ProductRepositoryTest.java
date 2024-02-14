@@ -262,6 +262,14 @@ class ProductRepositoryTest {
     }
 
     @Test
+    void testDeleteProductIfEmpty() {
+        String randomId = UUID.randomUUID().toString();
+
+        Product deletedProduct = productRepository.delete(randomId);
+        assertNull(deletedProduct);
+    }
+
+    @Test
     void testDeleteProductIfDoesNotExist() {
         Product product1 = new Product();
         product1.setProductName("Product 1");
@@ -277,13 +285,5 @@ class ProductRepositoryTest {
 
         Product findedProduct = productRepository.delete(randomId);
         assertNull(findedProduct);
-    }
-
-    @Test
-    void testDeleteProductIfEmpty() {
-        String randomId = UUID.randomUUID().toString();
-
-        Product deletedProduct = productRepository.delete(randomId);
-        assertNull(deletedProduct);
     }
 }
