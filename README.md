@@ -91,4 +91,6 @@ Jika saya menemukan adanya kesalahan pada *source code* saya pada pengerjaan tut
 <br>
 
 ***Tambahan lampiran untuk bonus:***<br>
-<img width="960" alt="image" src="https://github.com/adhan-857/tutorial-1/assets/119088782/dd27dde3-9e76-43e6-accd-e0b64ec002ed">
+<img width="960" alt="image" src="https://github.com/adhan-857/tutorial-1/assets/119088782/dd27dde3-9e76-43e6-accd-e0b64ec002ed"><br>
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=coverage) ](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)<br>
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=adhan-857_tutorial-1)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)
