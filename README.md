@@ -1,3 +1,7 @@
+
+[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=coverage) ](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)<br>
+[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=adhan-857_tutorial-1)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)
+
 # Tutorial Modul 1: Coding Standards
 ### Ramadhan Andika Putra (2206081976) - AdPro A <br>
 
@@ -92,5 +96,54 @@ Jika saya menemukan adanya kesalahan pada *source code* saya pada pengerjaan tut
 
 ***Tambahan lampiran untuk bonus:***<br>
 <img width="960" alt="image" src="https://github.com/adhan-857/tutorial-1/assets/119088782/dd27dde3-9e76-43e6-accd-e0b64ec002ed"><br>
-[![Coverage](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=coverage) ](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)[![Maintainability Rating](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=sqale_rating)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1) [![Security Rating](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=security_rating)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1) [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=adhan-857_tutorial-1&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)<br>
-[![Quality gate](https://sonarcloud.io/api/project_badges/quality_gate?project=adhan-857_tutorial-1)](https://sonarcloud.io/summary/new_code?id=adhan-857_tutorial-1)
+
+<br>
+<br>
+
+# Tutorial Modul 3: OO Principles & Software Maintainability
+### Ramadhan Andika Putra (2206081976) - AdPro A <br><br>
+
+1. Beberapa prinsip S.O.L.I.D. yang saya terapkan pada *project* saya pada projet ini adalah sebagai berikut:<br>
+    * **Single Responsibility Principle (SRP)**<br>
+      Setiap *class* harus sesuai dengan fungsinya masing-masing.
+      Pada *branch* `before-solid`, *class* `CarController` diletakkan di dalam *class* `ProductController`. Oleh karena itu, perlu dilakukan pemisahan agar `CarController` memiliki file *class* sendiri. Selain itu, sebaiknya *constructor class model* `Product` tidak memiliki *assign value* dalam constructornya. Oleh karena itu, saya menghapus *constructor* yang memberikan nilai UUID ke *id Product* dan memindahkannya ke dalam *method create* pada `ProductRepository`.
+   <br>
+   <br>
+      Selain itu, setiap *controller* memiliki tanggung jawab untuk melakukan *mapping* dengan *endpoint*-nya masing-masing, sehingga sebaiknya dipisahkan menjadi tiga *class* yang berbeda:
+        * `HomePageController` bertanggung jawab untuk melakukan *mapping* dengan *endpoint* `/`.
+        * `ProductController` bertanggung jawab untuk melakukan *mapping* dengan *endpoint* `/product`.
+        * `CarController` memiliki tanggung jawab untuk melakukan *mapping* dengan *endpoint* `/car`.
+   <br>
+   <br>
+   
+   * **Open-closed principle (OCP)**<br>
+     Pada *class* `CarController`, atribut `carService` diubah menjadi menggunakan *interface* `CarService` dan bukan menggunakan *class* `CarServiceImpl`, hal ini agar menjadi bersifat *open-closed*.
+   <br>
+   <br>
+   
+   * **Liskov Substitution Principle (LSP)**<br>
+     Pada branch *before-solid*, `ProductController.java` terdapat *subclass* `CarController`. Padahal, `CarController` memiliki *behaviour* yang berbeda dengan *superclass*-nya. Sehingga, `CarController` tidak perlu meng-*extend* `ProductController` (bisa menjadi file *class* tersendiri) dan *attribute* `carService` dapat diubah menjadi menggunakan *interface* `CarService`.
+   <br>
+   <br>
+   
+   * **Interface segregation principle (ISP)**<br>
+    Karena atribut dari `carService` tersebut telah diganti, maka *class* `CarServiceImpl` tidak perlu mengimplementasikan *method* dari *interface* yang mereka gunakan.
+   <br>
+   <br>
+
+   * **Dependency inversion principle (DIP)**<br>
+     Pada *branch* `before-solid`, `CarController` bergantung langsung dengan `CarServiceImpl`. Menurut saya, hal tersebut tidak baik karena `CarController` seharusnya bergantung dengan *interface* `CarService`. Oleh karena itu, saya mengganti tipe data dari variabel `carService` pada `CarController` menjadi `CarService`.
+<br>
+<br>
+<br>
+
+2. Dengan menerapkan prinsip S.O.L.I.D, menurut saya telah memberikan cukup banyak keuntungan pada tutorial dan *exercise* pada modul kali ini. Saya dapat meningkatkan modularitas, kualitas, kerapihan, dan memberikan kemudahan *maintain* secara berkelanjutan dari kode yang telah saya buat. Jika saya ingin melakukan modifikasi kode pun akan menjadi lebih efisien karena telah meminimalkan kebutuhan untuk melakukan perubahan pada banyak bagian kode. Terakhir, ketika bekerja dalam tim, menurut saya, prinsip S.O.L.I.D juga memberikan kemudahan dalam melakukan review kode dan menghindari kode yang sulit dipahami.<br>
+   <br>
+   Untuk contoh penerapannya sendiri sudah saya jelaskan pada nomor sebelumnya.
+<br>
+<br>
+<br>
+
+3. Jika kita tidak menerapkan prinsip S.O.L.I.D, kekurangannya menurut saya kode yang saya buat menjadi sulit untuk di-*maintain* dan membutuhkan *effort* yang lebih besar untuk melakukan modifikasi kode. Selain itu, apabila bekerja dalam tim, akan sulit untuk melakukan review kode dan kode pun menjadi sulit dipahami.<br>
+   <br>
+   Contohnya, bayangkan jika saya tidak menerapkan SRP pada `CarController`. Jika ada orang lain membaca kode milik saya, maka mereka akan kesulitan mencari kode tersebut karena disatukan dengan file `ProductController`. Selain itu, jika saya tidak meterapkan LSP, *subclass* `CarController` tidak dapat menggantikan *superclass*-nya.
