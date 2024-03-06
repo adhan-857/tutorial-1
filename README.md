@@ -147,3 +147,22 @@ Jika saya menemukan adanya kesalahan pada *source code* saya pada pengerjaan tut
 3. Jika kita tidak menerapkan prinsip S.O.L.I.D, kekurangannya menurut saya kode yang saya buat menjadi sulit untuk di-*maintain* dan membutuhkan *effort* yang lebih besar untuk melakukan modifikasi kode. Selain itu, apabila bekerja dalam tim, akan sulit untuk melakukan review kode dan kode pun menjadi sulit dipahami.<br>
    <br>
    Contohnya, bayangkan jika saya tidak menerapkan SRP pada `CarController`. Jika ada orang lain membaca kode milik saya, maka mereka akan kesulitan mencari kode tersebut karena disatukan dengan file `ProductController`. Selain itu, jika saya tidak meterapkan LSP, *subclass* `CarController` tidak dapat menggantikan *superclass*-nya.
+
+<br>
+<br>
+
+# Tutorial Modul 4: Test-Driven Development & Refactoring
+### Ramadhan Andika Putra (2206081976) - AdPro A <br><br>
+
+***[ Reflection ]***<br>
+
+1. Setelah mempelajari lebih dalam mengenai alur TDD dan mengerjakan tutorial ini, menurut saya, alur TDD seperti ini cukup menyulitkan walau saya yakin sebenarnya banyak manfaat dari jika kita mengimplementasikannya. Saya sendiri merasa kesulitan karena mungkin tidak terbiasa dalam membuat *testing* terlebih dahulu sebelum membuat implementasi dari *class*-nya.
+    <br>
+    <br>
+
+    Di sisi yang lain, saya juga merasa bahwa alur TDD ini membantu saya dalam mengevaluasi apakah hal yang saya lakukan sudah mencapai *correctness*, *maintainability*, dan *productive workflow*. Alur seperti ini membuat saya harus sering memerika apakah *tests* yang sebelumnya saya buat telah terpenuhi *correctness*-nya. Selain itu, alur seperti ini bagi saya dapat mengurangi kecenderungan membuat dua *method* atau fungsi yang saling terkait.
+   <br>
+   <br>
+   <br>
+
+2. Menurut saya, F.I.R.S.T *principle* sudah diterapkan dengan cukup baik pada pengerjaan tutorial kali ini. Test berlangsung cepat dan tidak mengganggu *workflow* yang lain. *Unit test* dan *functional* test telah dipisahkan dan tidak ada peristiwa menunggu suatu *subsystem*/fungsi pada saat menggunakan *unit test*. Akan tetapi, saya Saya tidak yakin bahwa saya sudah mengimplementasi F.I.R.S.T sepenuhnya. Karena saya belum menerima 100% *line/branch coverage*. Sehingga, saya masih harus menambahkan *tests* untuk mencapai hal tersebut.
