@@ -1,5 +1,6 @@
-package enums;
+package id.ac.ui.cs.advprog.eshop.enums;
 
+import id.ac.ui.cs.advprog.eshop.model.Order;
 import lombok.Getter;
 
 @Getter
@@ -10,13 +11,14 @@ public enum OrderStatus {
     CANCELLED("CANCELLED");
 
     private final String value;
-    private OrderStatus(String value) {
+
+    private OrderStatus(String value){
         this.value = value;
     }
 
-    public static boolean contains(String param) {
-        for (OrderStatus orderStatus : OrderStatus.values()) {
-            if (orderStatus.name().equals(param)) {
+    public static boolean contains(String param){
+        for (OrderStatus orderStatus: OrderStatus.values()){
+            if(orderStatus.name().equals(param)){
                 return true;
             }
         }
